@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>クイズアプリ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron mt-5">
+        <div class="d-flex justify-content-center">
+          <div id="js-question" class="alert alert-primary" role="alert">
+            問題文が入ります
+          </div>
+        </div>
+
+        <div id="js-items" class="d-flex justify-content-center flex-wrap">
+          <div class="m-2">
+            <button type="button" class="btn btn-primary"></button>
+          </div>
+          <div class="m-2">
+            <button type="button" class="btn btn-primary"></button>
+          </div>
+          <div class="m-2">
+            <button type="button" class="btn btn-primary"></button>
+          </div>
+          <div class="m-2">
+            <button type="button" class="btn btn-primary"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- モーダル（ポップアップ） -->
+    <div class="modal fade" id="resultModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body d-flex">
+            <div class="col-4">
+              <img id="modalImage" src="" class="img-fluid" alt="解説画像" />
+            </div>
+            <div class="col-8">
+              <h5 id="modalTitle"></h5>
+              <p id="modalBody"></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="closeModal" class="btn btn-secondary">
+              閉じる
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

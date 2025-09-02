@@ -1,0 +1,11 @@
+.btn-primary {
+  background-color: transparent !important;
+  border: 2px solid #66666600 !important;
+  color: #666 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+  background-color: #e74c3c !important; /* 赤 */
+  color: #fff !important;
+}

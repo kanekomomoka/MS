@@ -1,0 +1,13 @@
+#map {
+  width: 100%;
+}
+#map svg {
+  width: 100%;
+  height: auto;
+}
+#map svg a path {
+  transition: fill 0.3s linear;
+}
+#map svg a:hover path {
+  fill: #ffce00;
+}
