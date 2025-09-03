@@ -1,0 +1,63 @@
+以下の点を修正・追加しました：
+
+1. **変数の一貫性**: `$questionLen` という変数が定義されていましたが、使用されていませんでした。代わりに `QuestionLen` が使用されていました。これを修正しました。
+
+2. **正解の参照**: `$correct` 変数は常に最初の画像に設定されていました。これを現在のクイズの質問に基づいて動的に更新するように修正しました。
+
+3. **イベントリスナーのループ**: イベントリスナーを追加するループは、質問の長さではなく、画像の長さに基づいて行う必要があります。
+
+具体的には以下のように修正しました：
+
+- `$correct` 変数を削除し、`quiz[quizIndex].correct` を使用して動的に正解を参照するようにしました。
+- イベントリスナーのループを `$answer.length` に基づいて設定しました。
+
+これにより、正しい画像がクリックされたときにアラートが表示されるようになります。試してみてください！他に質問があれば教えてくださいね。
+
+---------------------------------------------------------------------------------------------------------------
+複数の画像を用意し、img01をクリックすれば正解、他の画像をクリックすると不正解とアラートが出るようにしたいのですがどうしたらですか。
+下記実際のコードです
+
+ｈｔｍｌ
+<div class="f01">
+          <img src="images/table/omote (1).png" id="img01" alt=""/>
+        </div>
+ 
+      <div class="f02">
+          <img src="images/table/omote (2).png" id="img02"/>
+        </div>
+
+
+      <div class="f03">
+          <img src="images/table/omote (3).png"id="img03"/>
+        </div>
+
+
+      <div class="f04">
+          <img src="images/table/omote (4).png" id="img04"/>
+        </div>
+
+ｊｓ
+const quiz = [
+  {
+    question: "意気込みや元気がこの上なく盛んな状態",
+    correct: document.getElementById("img01"),
+  },
+  {
+    question: "互いの気持ちや考えなどがぴったりと一致すること",
+    correct: document.getElementById("img02"),
+  },
+];
+
+const quizLen = quiz.length;
+
+document.getElementById("Q01").textContent =
+  "意気込みや元気がこの上なく盛んな状態";
+
+document.getElementsByTagName("img").addEventListener("click", () => {
+  if (document.getElementById("img01")) {
+    window.alert("正解");
+    score++;
+  } else {
+    window.alert("不正解");
+  }
+});
